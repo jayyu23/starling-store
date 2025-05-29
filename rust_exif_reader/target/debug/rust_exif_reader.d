@@ -1,1 +1,0 @@
-/Users/jayyu/Documents/Jay/Work/Stanford/4-Senior/Spring/EE\ 292J/Final\ Project/starling-store/rust_exif_reader/target/debug/rust_exif_reader: /Users/jayyu/Documents/Jay/Work/Stanford/4-Senior/Spring/EE\ 292J/Final\ Project/starling-store/rust_exif_reader/src/main.rs
