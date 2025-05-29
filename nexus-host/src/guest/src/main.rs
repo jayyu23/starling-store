@@ -5,10 +5,11 @@ use alloc::string::String;
 use nexus_rt::println;
 
 #[nexus_rt::main]
-fn main() -> u32 {
-    // Read in a single string
-    let blob_str: String = nexus_rt::read_private_input().expect("Failed to read blob string");
-    if validate_exif(&blob_str) {
+#[nexus_rt::public_input(exif_blob)]
+fn main(exif_blob: String) -> u32 {
+    println!("Validating EXIF data...");
+    
+    if validate_exif(&exif_blob) {
         println!("EXIF is valid.");
         0
     } else {

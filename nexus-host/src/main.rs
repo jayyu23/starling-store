@@ -18,11 +18,10 @@ fn main() {
 
     // EXIF data blob as a string (this would normally come from an actual image file)
     let exif_blob = "Make: Canon\nModel: 5D Mark III\nDateTime: 2015:05:22 15:07:45\nExposureTime: 1/60\nFNumber: f/8.0".to_string();
-    let public_input = 0u32; // dummy public input
 
     print!("Proving execution of EXIF validation... ");
     let (view, proof) = prover
-        .prove_with_input::<String, u32>(&exif_blob, &public_input)
+        .prove_with_input::<(), String>(&(), &exif_blob)
         .expect("failed to prove program");
 
     assert_eq!(view.exit_code().expect("failed to retrieve exit code"), 0);
@@ -42,8 +41,8 @@ fn main() {
     proof
         .verify_expected::<String, u32>(
             &exif_blob, // private input (the EXIF blob)
-            0,          // exit code = 0 (valid EXIF)
-            &0,         // output = 0 (valid EXIF)
+            0,          // exit code = 0 (valid EXIF)  
+            &0u32,      // output = 0 (valid EXIF)
             &elf,       // expected elf (program binary)
             &[],        // no associated data
         )
