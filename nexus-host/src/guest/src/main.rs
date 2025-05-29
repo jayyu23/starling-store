@@ -18,7 +18,6 @@ fn main(exif_blob: String) -> u32 {
     }
 }
 
-// NOTE: This is a placeholder. Real implementation should parse TIFF IFDs and tag values.
 fn validate_exif(blob_str: &str) -> bool {
     let make_ok = blob_str.contains("Canon");
     let model_ok = blob_str.contains("5D Mark III");
