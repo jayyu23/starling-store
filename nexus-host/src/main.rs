@@ -5,6 +5,8 @@ use nexus_sdk::{
 };
 
 const PACKAGE: &str = "guest";
+extern crate alloc;
+use alloc::string::String;
 
 fn main() {
     println!("Compiling guest program...");
@@ -14,19 +16,23 @@ fn main() {
 
     let elf = prover.elf.clone(); // save elf for use with test verification
 
-    print!("Proving execution of vm... ");
+    // EXIF data blob as a string (this would normally come from an actual image file)
+    let exif_blob = "Make: Canon\nModel: 5D Mark III\nDateTime: 2015:05:22 15:07:45\nExposureTime: 1/60\nFNumber: f/8.0".to_string();
+    let public_input = 0u32; // dummy public input
+
+    print!("Proving execution of EXIF validation... ");
     let (view, proof) = prover
-        .prove_with_input::<u32, u32>(&3, &5)
-        .expect("failed to prove program"); // x = 5, y = 3
+        .prove_with_input::<String, u32>(&exif_blob, &public_input)
+        .expect("failed to prove program");
 
     assert_eq!(view.exit_code().expect("failed to retrieve exit code"), 0);
 
     let output: u32 = view
         .public_output::<u32>()
         .expect("failed to retrieve public output");
-    assert_eq!(output, 15); // z = 15
+    assert_eq!(output, 0); // expecting 0 for valid EXIF
 
-    println!("output is {}!", output);
+    println!("EXIF validation result: {}!", if output == 0 { "VALID" } else { "INVALID" });
     println!(
         ">>>>> Logging\n{}<<<<<",
         view.logs().expect("failed to retrieve debug logs").join("")
@@ -34,12 +40,12 @@ fn main() {
 
     print!("Verifying execution...");
     proof
-        .verify_expected::<u32, u32>(
-            &5,   // x = 5
-            0,    // exit code = 0
-            &15,  // z = 15
-            &elf, // expected elf (program binary)
-            &[],  // no associated data,
+        .verify_expected::<String, u32>(
+            &exif_blob, // private input (the EXIF blob)
+            0,          // exit code = 0 (valid EXIF)
+            &0,         // output = 0 (valid EXIF)
+            &elf,       // expected elf (program binary)
+            &[],        // no associated data
         )
         .expect("failed to verify proof");
 
