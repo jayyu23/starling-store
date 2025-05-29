@@ -2,3 +2,4 @@ py_metadata_merkle/venv/
 guttenfelder_photos
 run.sh
 rust_exif_reader/target/
+nexus-host/target/
