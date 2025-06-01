@@ -72,5 +72,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         println!("EXIF Blob: {:02X?}", exif_blob);
         print_ascii(&exif_blob); // Print as ASCII to visually inspect EXIF validity
     }
+
+    println!("--------------------------------");
+    println!("EXIF Tags");
+    println!("--------------------------------");
+    for path in PHOTOS {
+        print_exif_tags(path)?;
+    }
     Ok(())
 }
