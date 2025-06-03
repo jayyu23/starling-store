@@ -1,6 +1,8 @@
-py_metadata_merkle/venv/
+*/py_metadata_merkle/venv/
 guttenfelder_photos
 run.sh
-rust_exif_reader/target
-nexus-host/target
+
+3-data-security/nexus-host/target
+3-data-security/rust_exif_merkle/target
+
 *.DS_Store
