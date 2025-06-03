@@ -105,13 +105,16 @@ fn verify_image_merkle_tree(image_path: &str, merkle_path: &str) -> Result<bool,
     let exifreader = exif::Reader::new();
     let exif = exifreader.read_from_container(&mut bufreader)?;
     
-    // Convert current EXIF fields to bytes
-    let current_leaves: Vec<Vec<u8>> = exif.fields()
+    // Convert current EXIF fields to bytes and sort them
+    let mut current_leaves: Vec<Vec<u8>> = exif.fields()
         .map(|f| {
             let value = format!("{}:{}", f.tag, f.display_value());
             value.as_bytes().to_vec()
         })
         .collect();
+    
+    // Sort leaves by their content to ensure deterministic ordering
+    current_leaves.sort();
 
     // Verify the stored tree against current data
     Ok(stored_tree.verify(&current_leaves))

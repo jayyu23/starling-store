@@ -1,14 +1,14 @@
 # Starling Store
 
-Toolkit for Starling Labs' Guttenfelder photos from North Korea.
+Storage Toolkit for Starling Labs' Guttenfelder photos from North Korea.
 
 ## Components
 
-## 1. Data Structure and Input
+1. Data Structure and Input
 
-## 2. Data Storage
+2. Data Storage
 
-## 3. Data Security
+3. Data Security
 
 ## Dataset
 
