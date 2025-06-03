@@ -1,0 +1,23 @@
+{
+  "original_file": "06_2015_RF_Guttenfelder_00004.JPG",
+  "total_size": 3062358,
+  "chunk_count": 3,
+  "chunks": [
+    {
+      "filename": "chunk_000.part",
+      "size": 1048576,
+      "sha256": "6047c9c3602baf6da107810a8c02d7e1b6e64602b6e2ee3a0e6bc52c7d88156d"
+    },
+    {
+      "filename": "chunk_001.part",
+      "size": 1048576,
+      "sha256": "a1bd5d531492674d64088ae7cb771053310016029026d11c42561f7248011564"
+    },
+    {
+      "filename": "chunk_002.part",
+      "size": 965206,
+      "sha256": "70abeab04b2f9ce4c6b4f5a185420927daf9ffed2999e142310392cec974e8b1"
+    }
+  ],
+  "cid": "bafkreidzkudo3wltrfoofxgw3yhjdfca33gqevp72p6uul76cw4lyhc2oy"
+}
