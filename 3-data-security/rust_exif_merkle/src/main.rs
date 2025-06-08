@@ -1,9 +1,25 @@
 use std::fs::File;
 use std::io::{Read, BufReader};
 use std::path::Path;
+use serde::{Deserialize, Serialize};
 
 mod merkle;
 use merkle::{MerkleNode, build_merkle_tree};
+
+#[derive(Serialize, Deserialize, Debug, Clone)]
+struct ExifField {
+    tag: String,
+    ifd_num: String,
+    value: String,
+    description: String,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+struct ExifData {
+    file_path: String,
+    fields: Vec<ExifField>,
+    total_fields: usize,
+}
 
 /// Returns the raw EXIF blob from a JPEG file (excluding JPEG markers).
 pub fn extract_exif_blob(path: &str) -> Option<Vec<u8>> {
@@ -41,16 +57,18 @@ pub fn extract_exif_blob(path: &str) -> Option<Vec<u8>> {
     }
 }
 
-pub fn print_exif_tags(path: &str) -> Result<(), Box<dyn std::error::Error>> {
+pub fn print_exif_tags_json(path: &str) -> Result<(), Box<dyn std::error::Error>> {
     println!("Processing file: {} \n", path);
     let file = std::fs::File::open(path)?;
     let mut bufreader = std::io::BufReader::new(&file);
     let exifreader = exif::Reader::new();
     let exif = exifreader.read_from_container(&mut bufreader)?;
+    println!("EXIF Data: \n{{");
     for f in exif.fields() {
-        println!("{} {} {}",
-                 f.tag, f.ifd_num, f.display_value().with_unit(&exif));
+        println!("    \"{}\" : \"{}\",",
+                 f.tag, f.display_value().with_unit(&exif));
     }
+    println!("}}");
     Ok(())
 }
 
@@ -129,8 +147,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     for path in PHOTOS {
         println!("Processing file: {}", path);
         
-        // Print EXIF tags
-        print_exif_tags(path)?;
+        // Extract and print EXIF data as JSON
+        print_exif_tags_json(path)?;
         
         // Build and print Merkle tree
         let merkle_root = build_exif_merkle_tree(path)?;
