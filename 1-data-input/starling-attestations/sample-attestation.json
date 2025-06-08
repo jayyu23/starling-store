@@ -13,7 +13,7 @@
     }
   },
   "attestation": {
-    "CID": "CID(bafkreif7gtpfl7dwi5nflge2rsfp6vq6q5kkwfm7uvxyyezxhsnde5ly3y)",
+    "CID": "CID(bafkreidzkudo3wltrfoofxgw3yhjdfca33gqevp72p6uul76cw4lyhc2oy)",
     "value": "This is a photo of a worker in a North Korean factory making a flag",
     "attribute": "description",
     "encrypted": false,
