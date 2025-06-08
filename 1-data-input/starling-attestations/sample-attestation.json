@@ -1,0 +1,22 @@
+{
+  "version": "1.1",
+  "signature": {
+    "pubKey": "Uint8Array(32)",
+    "sig": "Uint8Array(64)",
+    "msg": "CID(bafyreietqpflteqz6kj7lmdqz76kzkwdo65o4bhivxrmqvha7pdgixxos4)"
+  },
+  "timestamp": {
+    "ots": {
+        "proof": "Uint8Array(503)",
+        "upgraded": false,
+        "msg": "CID(bafyreialprnoiwl25t37feen7wbkwwr4l5bpnokjydkog3mhiuodi2av6m)"
+    }
+  },
+  "attestation": {
+    "CID": "CID(bafkreif7gtpfl7dwi5nflge2rsfp6vq6q5kkwfm7uvxyyezxhsnde5ly3y)",
+    "value": "This is a photo of a worker in a North Korean factory making a flag",
+    "attribute": "description",
+    "encrypted": false,
+    "timestamp": "2023-05-29T19:03:28.601Z"
+  }
+}
