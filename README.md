@@ -7,13 +7,13 @@ By Jay Yu and Ihsaan Doola
 
 ## Overview
 
-Within this project, we present a storage toolkit for David Guttenfelder's North Korea archive, featuring photos taken from 2015 in the Democratic People Republic of Korea and derived 3D reconstructions. Our project seeks to design a storage pipeline for these artifacts using emerging web3 technologies, addressing questions such as:
+Within this project, we present a storage toolkit for [David Guttenfelder's North Korea archive](https://www.davidguttenfelder.com/inside-the-cult-of-kim-1), featuring photos taken from 2000-2015 in the Democratic People's Republic of Korea, as well as derived videos and3D reconstructions. Our project seeks to design a storage pipeline for these artifacts using emerging web3 technologies, addressing questions such as:
 
 * What are the different types of data that we need to store from the Guttenfelder archive, and how should we process this data for storage processes?  
 * What are the web3 storage technologies that may be available for this task? What are each of their strengths and limitations?  
 * How do we use cryptographic techniques to ensure that the data remains secure and tamper-resistant?  
 * How do we address privacy issues surrounding what can be revealed to the public, and what must remain confidential to protect journalists and subjects' identities?  
-* How does this project compose with existing initiatives by Starling Lab, including the Authenticated Attributes project, as well as wider industry efforts such as C2PA?
+* How does this project compose with existing initiatives by Starling Lab, such as the [Authenticated Attributes project](https://github.com/starlinglab/authenticated-attributes)?
 
 In our proposed solution, we will highlight three key parts in our toolkit solution:
 
