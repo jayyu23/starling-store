@@ -7,6 +7,9 @@
 By Jay Yu and Ihsaan Doola
 
 
+![Cover Image](data/06_2015_RF_Guttenfelder_00004.JPG)
+
+
 ## Overview
 
 Within this project, we present a storage toolkit for [David Guttenfelder's North Korea archive](https://www.davidguttenfelder.com/inside-the-cult-of-kim-1), featuring photos taken from 2000-2015 in the Democratic People's Republic of Korea, as well as derived videos and3D reconstructions. Our project seeks to design a storage pipeline for these artifacts using emerging web3 technologies, addressing questions such as:
