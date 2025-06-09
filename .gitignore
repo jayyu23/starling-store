@@ -5,6 +5,8 @@ run.sh
 1-data-input/blob_cid_shard/target
 2-data-storage/ipfs-pinata/target
 2-data-storage/ipfs-pinata/.env
+2-data-storage/akave-hot-storage/target
+2-data-storage/akave-hot-storage/.env
 3-data-security/nexus_zkvm/target
 3-data-security/rust_exif_merkle/target
 
