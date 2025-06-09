@@ -1,6 +1,8 @@
-# Guttenfelder Photos Storage Toolkit
+# Guttenfelder Archive Storage Toolkit
 
-### Stanford EE 292J Final Project 
+### Stanford EE 292J Final Project, Spring 2025
+
+*A trust-preserving storage pipeline for David Guttenfelder's North Korea archive*
 
 By Jay Yu and Ihsaan Doola
 
