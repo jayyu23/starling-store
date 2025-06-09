@@ -55,8 +55,8 @@ For storage components, you'll need to set up the following environment variable
 
 - `PINATA_API_KEY` - API key for Pinata IPFS storage
 - `PINATA_SECRET_API_KEY` - Secret API key for Pinata
-- `AKAVE_ACCESS_KEY` - Access key for Akave storage (if using)
-- `AKAVE_SECRET_KEY` - Secret key for Akave storage (if using)
+- `AKAVE_USERNAME` - Username for Akave hot storage
+- `AKAVE_CREDENTIAL` - Credential for Akave hot storage
 
 Create `.env` files in the respective storage component directories:
 - `2-data-storage/ipfs-pinata/.env`
