@@ -16,8 +16,8 @@ fn main() {
 
     let elf = prover.elf.clone(); // save elf for use with test verification
 
-    // EXIF data blob as a string (this would normally come from an actual image file)
-    let exif_blob = "Make: Canon\nModel: 5D Mark III\nDateTime: 2015:05:22 15:07:45\nExposureTime: 1/60\nFNumber: f/8.0".to_string();
+    // Sample EXIF data blob as a string
+    let exif_blob = "Make: Canon\nModel: Canon EOS 5D Mark III\nDateTime: 2015:05:22 15:07:45\nExposureTime: 1/60\nFNumber: f/8.0".to_string();
 
     print!("Proving execution of EXIF validation... ");
     let (view, proof) = prover

@@ -20,7 +20,7 @@ fn main(exif_blob: String) -> u32 {
 
 fn validate_exif(blob_str: &str) -> bool {
     let make_ok = blob_str.contains("Canon");
-    let model_ok = blob_str.contains("5D Mark III");
+    let model_ok = blob_str.contains("Canon EOS 5D Mark III");
     let date_ok = blob_str.contains("2015:05:22 15:07:45");
     make_ok && model_ok && date_ok
 }
