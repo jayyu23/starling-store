@@ -24,7 +24,7 @@ In our proposed solution, we will highlight three key parts in our toolkit solut
 
 * **1 - Data Input & Processing** - We present a solution to standardize data input from multiple sources, including photos, videos, 3D models, and related metadata, as IPFS-compatible Binary Large Objects (BLOBs), and create prototype for BLOB data sharding. We also take as input signed metadata attestations following the Starling Authenticated Attributes repository.  
     
-* **2 - Data Storage Solutions** - We examine various web3 technologies that may be suitable for the storage of various components, including: IPFS via Pinata, Arweave, Data Availability (DA) solutions, Akave's S3-compatible decentralized database solution, on-chain smart contract state (Ethereum Virtual Machine SSTORE), and as Move-language objects on Sui Walrus. We demonstrate a prototype pipeline for BLOB storage on IPFS via Pinata
+* **2 - Data Storage Solutions** - We examine various web3 technologies that may be suitable for the storage of various components, including: IPFS via Pinata as a cold storage solution, Akave's S3-compatible decentralized database as a hot storage solution, and Sui Walrus for BLOB backup as Move language objects.
 
 * **3 - Data Security & Privacy** - We consider a pipeline for data security and privacy of the image data and metadata. We read EXIF metadata, provide a toolkit to store the metadata and related attributes as a Merkle tree, and verification of metadata attributes through the Zero Knowledge Virtual Machine (ZKVM) by Nexus Labs.
 
